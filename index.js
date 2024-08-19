@@ -18,6 +18,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server started on port 3000");
+});
+
 process.on("uncaughtException", (err) => {
   console.error("Uncaught Exception:", err);
   process.exit(1);
