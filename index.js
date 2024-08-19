@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import cors from "cors";
+const app = express();
 
 const corsConfig = {
   origin: "*",
@@ -10,7 +11,6 @@ const corsConfig = {
 app.options("*", cors(corsConfig));
 app.use(cors(corsConfig));
 
-const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
